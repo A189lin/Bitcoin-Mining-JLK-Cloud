@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test</title>
+</head>
+<body>
+<div class="input-field col s6">
+  <input placeholder="请输入数据" id="text1" type="text" class="validate">
+</div>
+
+<a href="file:///android_asset/index2.html" target="_blank">我的另一个html</a>
+
+<button type="button" id="button1" onclick="testClick()" target="_blank">注册</button>
+
+<button type="button" id="button2" onclick="testClick2()">存款</button>
+
+<button type="button" id="button3" onclick="testClick3()">首次存款</button>
+</body>
+<script>
+        function testClick() {
+           window.jsBridge.postMessage('openWindow', '{ url: "https://www.baidu.com" }');
+       }
+
+         function testClick2() {
+           window.android.onEventJs('first-recharge-success', '0');
+       }
+
+        function testClick3() {
+           window.androidJs.adjustEvent('first-deposit-success', 1);
+       }
+
+</script>
+</html>
